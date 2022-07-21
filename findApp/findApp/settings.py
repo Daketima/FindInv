@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'findInv1.apps.Findinv1Config'
 ]
 
 MIDDLEWARE = [
@@ -69,17 +70,20 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'findApp.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'findinv',
+        'USER': 'mubarak',
+        'PASSWORD': 'findinv@1',
+        'HOST': 'localhost',
+        'PORT':'',
+        
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
