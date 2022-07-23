@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Findin</title>
+<h1>Welcome to Awesome Website</h1>
+</head>
+    <body>
+        {% block head %}
+        welcome to our site, {{ user.username|default:'Guest' }}!
+        {% endblock %}
+
+        {% block content %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">
+                        {{message}}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endblock %}
+    </body>
+</html>
