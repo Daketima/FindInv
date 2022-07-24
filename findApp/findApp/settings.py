@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-0+aw7(j6x2ed4+32u62_rb2*9it9#6txwg_gu*&j*bzgj8^wi-'
+SECRET_KEY = 'django-insecure-ub-z%^!@=2x!e0bv((nmfkwf9sh7^2%1xa0a9mr*%o$1)y_x0_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,7 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'findInv1.apps.Findinv1Config'
 ]
 
 MIDDLEWARE = [
@@ -70,20 +69,17 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'findApp.wsgi.application'
 
+
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'findinv',
-        'USER': 'mubarak',
-        'PASSWORD': 'findinv@1',
-        'HOST': 'localhost',
-        'PORT':'',
-        
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
