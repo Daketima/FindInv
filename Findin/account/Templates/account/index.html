@@ -44,6 +44,11 @@
 		      <a class="navbar-brand" href="#">Development with Findin</a>
 		    </div>
 		    <div class="collapse navbar-collapse">
+				{% for message in messages %}
+                    <div class="alert alert-success" role="alert">
+                        {{message}}
+                    </div>
+                {% endfor %}
 		      <ul class="nav navbar-nav">
 		        <li class="active" data-toggle="collapse" data-target=".navbar-collapse.in"><a href="#">Home</a></li>
 		        <li><a href="#about" data-toggle="collapse" data-target=".navbar-collapse.in">About Us</a></li>
@@ -63,7 +68,7 @@
 				<div class="container checkOutMyPortfolio">
 					<img src="img/profile.png">
 						<h2>Findin world<span>!</span></h2>
-							<p>welcome to the world of unlinmited ideas</p>
+							<p>welcome to the world of unlimited ideas</p>
 							
 				</div>
 			</div>
