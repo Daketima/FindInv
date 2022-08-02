@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 
 clienttype=(
-    ("0",""),
+    ("0","select options"),
     ("1","company"),
     ("2","investor"),
     ("3","idealist"),
@@ -12,7 +12,7 @@ clienttype=(
 )
 
 sex=(
-    ("0",""),
+    ("0","select"),
     ("1","female"),
     ("2","male"),
 )
