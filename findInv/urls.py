@@ -1,4 +1,4 @@
-"""findApp URL Configuration
+"""findInv URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.0/topics/http/urls/
@@ -14,8 +14,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from findApp.views import findInv, idea_owner, investor, company
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('findApp.urls')),
+    # path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/signup/', findInv.SignUpView.as_view(), name='signup'),
+    path('accounts/signup/IdeaOwner/', idea_owner.IdeaOwnerSignUpView.as_view(), name='idea_owner_signup'),
+    path('accounts/signup/Investor/', investor.InvestorSignUpView.as_view(), name='investor_signup'),
+    path('accounts/signup/Company/', company.CompanySignUpView.as_view(), name='company_signup'),
 ]

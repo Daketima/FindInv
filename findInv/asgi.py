@@ -1,5 +1,5 @@
 """
-ASGI config for findApp project.
+ASGI config for findInv project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'findApp.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'findInv.settings')
 
 application = get_asgi_application()
