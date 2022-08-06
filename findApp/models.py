@@ -2,10 +2,39 @@ from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 from django.db import models
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
+# from picklefield import PickledObjectField
 
 from .managers import CustomUserManager
 
 # Create your models here.
+
+# class AuthRecord(models.Model):
+#     # These two fields define a unique AuthRecord: the name of the
+#     # provider and the identifier the provider uses to identify the
+#     # user, which if possible should be stable across changes in
+#     # screen names.
+#     provider = models.CharField(max_length=32, db_index=True)
+#     uid = models.CharField(max_length=128)
+
+#     # The Django User associated with the provider-uid pair.
+#     user = models.ForeignKey(User, related_name="singlesignon", db_index=True, on_delete=models.CASCADE)
+
+#     # Profile information returned by the most recent OAuth callback, etc.
+#     auth_token = PickledObjectField()
+#     profile = PickledObjectField()
+
+#     # General metadata.
+#     created = models.DateTimeField(auto_now_add=True)
+#     updated = models.DateTimeField(auto_now=True)
+
+#     class Meta:
+#         verbose_name = "Authentication Record"
+#         unique_together = (("provider", "uid"),)
+
+#     # don't add any ordering because it causes mysql filesort on joins
+
+    # def __unicode__(self):
+    #     return self.provider + " " + self.uid[0:10] + " -> " + self.user.username
 
 class CustomUser(AbstractBaseUser, PermissionsMixin):
     """Creates a user using the defined manager"""
