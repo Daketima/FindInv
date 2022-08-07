@@ -1,1 +1,1 @@
-web: gunicorn findinv:wsgi
+web: gunicorn findInv.wsgi

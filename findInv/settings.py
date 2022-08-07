@@ -26,11 +26,10 @@ SECRET_KEY = 'django-insecure-kzg_nw_8uva9)-f8q+*(79_uj)0_ij2f+*zmt$w2!c82m5^vlh
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
-# Application definition
+
+ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com'] # Application definition
 
 INSTALLED_APPS = [
-    'whitenoise.runserver_nostatic',
     'whitenoise.runserver_nostatic',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -128,6 +127,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -140,4 +140,3 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
