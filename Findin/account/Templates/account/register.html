@@ -1,0 +1,21 @@
+{% extends "./base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="content-section" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+         xmlns="http://www.w3.org/1999/html">
+            <form method="post">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">join Today</legend>
+                    {{ form|crispy }}
+                </fieldset>
+                <div class="form-group">
+                    <button class="btn btn-outline-info" type="submit">signup</button>
+                </div>
+            </form>
+            <div class="border-top pt-3">
+                <small class="text-muted"> have an account? <a class="ml-2" href="#">sign in</a> </small>
+            </div>
+    </div>
+
+{% endblock %}
